@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Password Generator</h1>
+        <p class="subtitle">Create strong and secure passwords for your accounts</p>
+
+        <div class="card">
+            <div class="field-label">Your Password</div>
+            <div class="password-box">
+                <input type="text" id="passwordResult" readonly value="Click Regenerate">
+                <button onclick="copyToClipboard()" class="icon-btn" title="Copy">📋</button>
+            </div>
+
+            <div class="strength-row">
+                <span>Strength:</span>
+                <span id="strengthText" class="strong">Strong</span>
+            </div>
+
+            <div class="length-row">
+                <div class="label-between">
+                    <span>Password Length</span>
+                    <span id="lengthVal" class="accent-text">16</span>
+                </div>
+                <input type="range" id="lengthSlider" min="4" max="128" value="16">
+                <div class="range-limits">
+                    <span>4</span>
+                    <span>128</span>
+                </div>
+            </div>
+
+            <div class="character-types">
+                <div class="field-label">Character Types</div>
+                <label class="checkbox-container">Uppercase (A-Z)
+                    <input type="checkbox" id="uppercase" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="checkbox-container">Lowercase (a-z)
+                    <input type="checkbox" id="lowercase" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="checkbox-container">Numbers (0-9)
+                    <input type="checkbox" id="numbers" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="checkbox-container">Symbols (!@#$%)
+                    <input type="checkbox" id="symbols" checked>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <div class="button-group">
+                <button onclick="generatePassword()" class="btn-primary">🔄 Regenerate</button>
+                <button onclick="copyToClipboard()" class="btn-secondary">📋 Copy</button>
+            </div>
+
+            <div class="tips-box">
+                <div class="tips-title">💡 Tips for Strong Passwords</div>
+                <ul>
+                    <li>Use at least 12 characters for better security</li>
+                    <li>Mix different character types</li>
+                    <li>Avoid using the same password multiple times</li>
+                    <li>Store your passwords securely</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p class="footer-note">Your passwords are generated locally. Nothing is stored or sent to servers.</p>
+        <p class="made-by">Made by Pooja Pawar</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
